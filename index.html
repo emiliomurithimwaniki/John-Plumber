@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Plumber | Professional Plumbing Services</title>
+    <meta name="description" content="Professional plumbing, irrigation, and water-related services by John Plumber. Reliable, affordable, and experienced.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>John Plumber</h1>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="visually-hidden">Main Content</h2>
+        <section id="home" class="hero">
+            <h2>Your Trusted Plumbing Expert</h2>
+            <p>Over 7 years of experience in all plumbing works. Reliable, professional, and ready to help!</p>
+            <a href="#contact" class="cta-btn">Contact Me</a>
+        </section>
+        <section id="services">
+            <h2>My Services</h2>
+            <ul class="service-list">
+                <li>Leak Repairs</li>
+                <li>Pipe Installation & Replacement</li>
+                <li>Bathroom & Kitchen Plumbing</li>
+                <li>Water Heater Services</li>
+                <li>Emergency Plumbing</li>
+                <li>Drain Cleaning</li>
+                <li>Irrigation Services</li>
+                <li>Other Water-Related Services</li>
+                <li>General Maintenance</li>
+            </ul>
+        </section>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+    <figure>
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Modern bathroom plumbing work">
+        <figcaption>Modern bathroom plumbing installation</figcaption>
+    </figure>
+    <figure>
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Pipe installation">
+        <figcaption>Neat and professional pipework</figcaption>
+    </figure>
+    <figure>
+        <img src="https://images.unsplash.com/photo-1521208919516-7a51e8a67c57?auto=format&fit=crop&w=400&q=80" alt="Irrigation system setup">
+        <figcaption>Irrigation system setup for a garden</figcaption>
+    </figure>
+    <figure>
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Water heater installation">
+        <figcaption>Water heater installation</figcaption>
+    </figure>
+    <figure>
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Kitchen plumbing">
+        <figcaption>Kitchen sink and plumbing</figcaption>
+    </figure>
+    <figure>
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Outdoor tap installation">
+        <figcaption>Outdoor tap and piping installation</figcaption>
+    </figure>
+    <figure>
+        <img src="https://images.unsplash.com/photo-1455656678494-4d1b5f3e7ad3?auto=format&fit=crop&w=400&q=80" alt="Leak repair">
+        <figcaption>Leak repair and maintenance</figcaption>
+    </figure>
+    <figure>
+        <img src="https://images.unsplash.com/photo-1525104885111-2d9b7a3b5b09?auto=format&fit=crop&w=400&q=80" alt="Bathroom renovation plumbing">
+        <figcaption>Bathroom renovation plumbing</figcaption>
+    </figure>
+</div>
+            <p style="text-align:center; font-size:0.98em; color:#555;">*You can replace these with your own photos by uploading them to your project folder.*</p>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi! I'm John, a professional plumber with over 7 years of hands-on experience. In addition to plumbing, I specialize in irrigation and other water-related services. I take pride in delivering quality solutions for homes, businesses, and farms. My commitment is to provide prompt, reliable, and affordable services to all my clients.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Have a plumbing issue or need a quote? Reach out now!</p>
+            <ul class="contact-info">
+                <li><strong>Phone:</strong> <a href="tel:+254796031071">+254796031071</a></li>
+                <li><strong>Email:</strong> <a href="mailto:emiliomurithi4@gmail.com">emiliomurithi4@gmail.com</a></li>
+            </ul>
+            <form id="contact-form" method="POST" action="sendmail.php" autocomplete="off" aria-label="Contact form">
+        <input type="text" name="name" placeholder="Your Name" required aria-required="true" aria-label="Your Name">
+        <input type="email" name="email" placeholder="Your Email" required aria-required="true" aria-label="Your Email">
+        <textarea name="message" placeholder="Your Message" required aria-required="true" aria-label="Your Message"></textarea>
+        <button type="submit" id="contact-submit">Send Message</button>
+        <div id="form-status" role="status" aria-live="polite"></div>
+    </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 John Plumber. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
