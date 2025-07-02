@@ -3,23 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Plumber | Professional Plumbing Services</title>
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Professional plumbing, irrigation, and water-related services by John Plumber. Reliable, affordable, and experienced.">
+    <meta name="keywords" content="plumber, plumbing, irrigation, water services, leak repair, pipe installation, emergency plumbing, John Plumber, maintenance, bathroom plumbing, kitchen plumbing, drain cleaning, water heater, affordable plumbing, professional plumber">
+    <meta name="author" content="John Plumber">
+    <!-- Social Sharing: Open Graph -->
+    <meta property="og:title" content="John Plumber | Professional Plumbing Services">
+    <meta property="og:description" content="Professional plumbing, irrigation, and water-related services by John Plumber. Reliable, affordable, and experienced.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:image" content="https://your-domain.com/preview.jpg">
+    <!-- Social Sharing: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="John Plumber | Professional Plumbing Services">
+    <meta name="twitter:description" content="Professional plumbing, irrigation, and water-related services by John Plumber. Reliable, affordable, and experienced.">
+    <meta name="twitter:image" content="https://your-domain.com/preview.jpg">
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0077cc">
+    <!-- Optional: Browser Compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>John Plumber | Professional Plumbing Services</title>
     <link rel="icon" type="image/png" href="Favicon.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+    /* Inline fallback for collapsed nav */
+    #main-nav.collapsed .nav-menu,
+    #main-nav.collapsed .nav-link {
+        display: none !important;
+    }
+    #main-nav.collapsed .collapse-toggle {
+        right: 12px;
+        position: absolute;
+    }
+    #main-nav .collapse-toggle {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.3em;
+        cursor: pointer;
+        margin-left: 8px;
+        position: absolute;
+        top: 16px;
+        right: 12px;
+        z-index: 1200;
+        padding: 2px 8px;
+        border-radius: 16px;
+        transition: background 0.2s;
+    }
+    #main-nav .collapse-toggle:hover {
+        background: #90e0ef;
+        color: #0077b6;
+    }
+    @media (max-width: 600px) {
+        #main-nav .collapse-toggle {
+            top: 38px;
+        }
+    }
+    </style>
 </head>
 <body>
-    <header>
+    <header style="position:relative;">
         <h1>John Plumber</h1>
-        <nav aria-label="Main navigation">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <nav aria-label="Main navigation" id="main-nav">
+    <button id="nav-toggle" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <button id="collapse-toggle" class="collapse-toggle" aria-label="Collapse navbar" aria-expanded="true" title="Collapse navbar">
+        <span id="collapse-icon">&laquo;</span>
+    </button>
+    <ul id="nav-menu" class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+</nav>
     </header>
     <main>
         <h2 class="visually-hidden">Main Content</h2>
@@ -135,5 +196,142 @@
         <p>&copy; 2025 John Plumber. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script>
+    // Hamburger menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', function() {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        navMenu.classList.toggle('open');
+    });
+    // Navbar collapse toggle
+    const collapseToggle = document.getElementById('collapse-toggle');
+    const mainNav = document.getElementById('main-nav');
+    const collapseIcon = document.getElementById('collapse-icon');
+    collapseToggle.addEventListener('click', function() {
+        const collapsed = mainNav.classList.toggle('collapsed');
+        collapseToggle.setAttribute('aria-expanded', !collapsed);
+        collapseIcon.innerHTML = collapsed ? '&raquo;' : '&laquo;';
+    });
+    // Smooth scroll and active link highlight
+    const navLinks = document.querySelectorAll('.nav-link');
+    function setActiveLink() {
+        let fromTop = window.scrollY + 80;
+        navLinks.forEach(link => {
+            const section = document.querySelector(link.hash);
+            if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', setActiveLink);
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.hash).scrollIntoView({behavior: 'smooth'});
+            if (window.innerWidth <= 600) {
+                navMenu.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', false);
+            }
+        });
+    });
+    setActiveLink();
+    </script>
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">&#8679;</button>
+    <style>
+    #back-to-top {
+        display: none;
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        z-index: 1500;
+        background: linear-gradient(90deg, #0077b6 70%, #00b4d8 100%);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        font-size: 2em;
+        box-shadow: 0 4px 16px rgba(0,119,182,0.18);
+        cursor: pointer;
+        transition: background 0.2s, opacity 0.2s;
+        opacity: 0.85;
+    }
+    #back-to-top:hover {
+        background: #48cae4;
+        color: #0077b6;
+        opacity: 1;
+    }
+    </style>
+    <script src="script.js"></script>
+    <script>
+    // All custom nav and UI logic in one block to avoid redeclaration
+    (function() {
+        // Hamburger menu toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !expanded);
+                navMenu.classList.toggle('open');
+            });
+        }
+        // Navbar collapse toggle
+        const collapseToggle = document.getElementById('collapse-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const collapseIcon = document.getElementById('collapse-icon');
+        if (collapseToggle && mainNav && collapseIcon) {
+            collapseToggle.addEventListener('click', function() {
+                const collapsed = mainNav.classList.toggle('collapsed');
+                collapseToggle.setAttribute('aria-expanded', !collapsed);
+                collapseIcon.innerHTML = collapsed ? '&raquo;' : '&laquo;';
+            });
+        }
+        // Smooth scroll and active link highlight
+        const navLinks = document.querySelectorAll('.nav-link');
+        function setActiveLink() {
+            let fromTop = window.scrollY + 80;
+            navLinks.forEach(link => {
+                const section = document.querySelector(link.hash);
+                if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', setActiveLink);
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.hash).scrollIntoView({behavior: 'smooth'});
+                if (window.innerWidth <= 600) {
+                    navMenu.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', false);
+                }
+            });
+        });
+        setActiveLink();
+        // Back to Top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 200) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        if (backToTop) {
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

@@ -12,7 +12,7 @@ body {
 header {
     background: linear-gradient(90deg, #0077b6 70%, #00b4d8 100%);
     color: #fff;
-    padding: 28px 0 18px 0;
+    padding: 12px 0 8px 0; /* reduced top/bottom padding */
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 119, 182, 0.08);
     position: sticky;
@@ -21,25 +21,59 @@ header {
 }
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 1.6em; /* reduced font size */
 }
-nav ul {
+nav ul, .nav-menu {
     list-style: none;
     padding: 0;
-    margin: 18px 0 0 0;
+    margin: 8px 0 0 0; /* reduced margin */
     display: flex;
     justify-content: center;
-    gap: 36px;
+    gap: 18px; /* reduced gap */
     font-weight: 500;
     letter-spacing: 0.02em;
+    transition: max-height 0.3s, opacity 0.25s;
 }
-nav a {
+#main-nav.collapsed .nav-menu,
+#main-nav.collapsed .nav-link {
+    display: none !important;
+    opacity: 0;
+}
+#main-nav.collapsed .collapse-toggle {
+    display: block;
+}
+#main-nav .collapse-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-left: 8px;
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    z-index: 1200;
+    padding: 2px 8px;
+    border-radius: 16px;
+    transition: background 0.2s;
+}
+#main-nav .collapse-toggle:hover {
+    background: #90e0ef;
+    color: #0077b6;
+}
+nav a, .nav-link {
     color: #fff;
     text-decoration: none;
-    font-size: 1.13em;
-    padding: 6px 12px;
+    font-size: 1em; /* slightly smaller font */
+    padding: 4px 10px; /* reduced padding */
     border-radius: 18px;
     transition: background 0.22s, color 0.2s, box-shadow 0.2s;
+}
+.nav-link.active {
+    background: #48cae4;
+    color: #0077b6;
+    box-shadow: 0 2px 8px rgba(72,202,228,0.18);
 }
 nav a:focus {
     outline: 2px solid #90e0ef;
